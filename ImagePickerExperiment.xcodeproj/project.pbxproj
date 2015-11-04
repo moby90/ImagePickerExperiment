@@ -13,6 +13,7 @@
 		F86BD6001BE65ADB0032E2C9 /* ImagePickerExperiment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F86BD5FE1BE65ADB0032E2C9 /* ImagePickerExperiment.xcdatamodeld */; };
 		F86BD6021BE65ADB0032E2C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F86BD6011BE65ADB0032E2C9 /* Assets.xcassets */; };
 		F86BD6051BE65ADB0032E2C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F86BD6031BE65ADB0032E2C9 /* LaunchScreen.storyboard */; };
+		F86BD60E1BE92A130032E2C9 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86BD60D1BE92A130032E2C9 /* TextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F86BD6011BE65ADB0032E2C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F86BD6041BE65ADB0032E2C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F86BD6061BE65ADB0032E2C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F86BD60D1BE92A130032E2C9 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		F86BD5EB1BE65ADB0032E2C9 = {
 			isa = PBXGroup;
 			children = (
+				F86BD60C1BE902430032E2C9 /* Delegates */,
 				F86BD5F61BE65ADB0032E2C9 /* ImagePickerExperiment */,
 				F86BD5F51BE65ADB0032E2C9 /* Products */,
 			);
@@ -65,6 +68,14 @@
 				F86BD5FE1BE65ADB0032E2C9 /* ImagePickerExperiment.xcdatamodeld */,
 			);
 			path = ImagePickerExperiment;
+			sourceTree = "<group>";
+		};
+		F86BD60C1BE902430032E2C9 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				F86BD60D1BE92A130032E2C9 /* TextFieldDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 			files = (
 				F86BD5FA1BE65ADB0032E2C9 /* ViewController.swift in Sources */,
 				F86BD6001BE65ADB0032E2C9 /* ImagePickerExperiment.xcdatamodeld in Sources */,
+				F86BD60E1BE92A130032E2C9 /* TextFieldDelegate.swift in Sources */,
 				F86BD5F81BE65ADB0032E2C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
