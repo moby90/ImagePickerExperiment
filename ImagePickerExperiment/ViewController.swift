@@ -36,11 +36,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private func setupTextField(textField: UITextField){
         
-        textField.textAlignment = NSTextAlignment.Center
         textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = NSTextAlignment.Center
+        
     }
     
     override func viewWillAppear(animated: Bool) {
+        
         super.viewWillAppear(animated)
         imagePickerView.contentMode = .ScaleAspectFit
         
@@ -77,7 +79,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             self.imagePickerView.image = image
-            self.view.addSubview(topTextField)
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
