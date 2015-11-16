@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -37,22 +37,22 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="DXW-pM-4pM"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rA-t9-A4T">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                                <animations/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="cTn-2i-YB0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="cTn-2i-YB0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-XB-8kN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-XB-8kN">
                                 <rect key="frame" x="0.0" y="507" width="600" height="50"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rA-t9-A4T">
+                                <rect key="frame" x="74" y="88" width="453" height="424"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.78900331439393945" green="0.78900331439393945" blue="0.78900331439393945" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,9 +64,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3rA-t9-A4T" secondAttribute="trailing" constant="-20" id="WGM-sR-u1y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pHM-XB-8kN" secondAttribute="trailing" constant="-20" id="X6s-au-GW8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cTn-2i-YB0" secondAttribute="trailing" constant="-20" id="eRW-Fr-Flq"/>
-                            <constraint firstItem="5IB-3O-PY4" firstAttribute="top" secondItem="pHM-XB-8kN" secondAttribute="bottom" constant="-1" id="jJQ-ne-qi5"/>
                             <constraint firstItem="3rA-t9-A4T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kK2-ab-nAc"/>
-                            <constraint firstItem="cTn-2i-YB0" firstAttribute="top" secondItem="3rA-t9-A4T" secondAttribute="top" id="oJo-kq-ijU"/>
                             <constraint firstItem="cTn-2i-YB0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vmf-ah-6OX"/>
                             <constraint firstItem="5IB-3O-PY4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yKP-by-MyA"/>
                         </constraints>

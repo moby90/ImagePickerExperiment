@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    var firstScreen = true
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -29,6 +31,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         setupTextField(self.topTextField)
         setupTextField(self.bottomTextField)
         
+        self.topTextField.text = ""
+        self.topTextField.enabled = false
+        self.bottomTextField.text = ""
+        self.bottomTextField.enabled = false
+        
         self.topTextField.delegate = textFieldDelegate
         self.bottomTextField.delegate = textFieldDelegate
 
@@ -36,8 +43,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private func setupTextField(textField: UITextField){
         
-        textField.textAlignment = NSTextAlignment.Center
         textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = NSTextAlignment.Center
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -74,6 +82,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         //In order to get access to an image
+        
+        
+        if firstScreen{
+            firstScreen = false
+            self.topTextField.enabled = true
+            self.topTextField.text = "TOP"
+            
+            self.bottomTextField.enabled = true
+            self.bottomTextField.text = "BOTTOM"
+        }
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             self.imagePickerView.image = image
