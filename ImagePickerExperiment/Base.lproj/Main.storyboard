@@ -37,36 +37,45 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="DXW-pM-4pM"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="cTn-2i-YB0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-XB-8kN">
-                                <rect key="frame" x="0.0" y="507" width="600" height="50"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rA-t9-A4T">
-                                <rect key="frame" x="74" y="88" width="453" height="424"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3rA-t9-A4T">
+                                <rect key="frame" x="0.0" y="28" width="600" height="528"/>
                                 <animations/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-XB-8kN">
+                                <rect key="frame" x="20" y="506" width="561" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="68o-rN-iIe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="cTn-2i-YB0">
+                                <rect key="frame" x="20" y="28" width="561" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="weU-Ea-qC5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.78900331439393945" green="0.78900331439393945" blue="0.78900331439393945" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pHM-XB-8kN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="05g-pJ-dv2"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5IB-3O-PY4" secondAttribute="bottom" id="6gB-qb-Aw4"/>
-                            <constraint firstItem="3rA-t9-A4T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="J06-dk-8g8"/>
-                            <constraint firstItem="5IB-3O-PY4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VJD-PN-FhS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3rA-t9-A4T" secondAttribute="trailing" constant="-20" id="WGM-sR-u1y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pHM-XB-8kN" secondAttribute="trailing" constant="-20" id="X6s-au-GW8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cTn-2i-YB0" secondAttribute="trailing" constant="-20" id="eRW-Fr-Flq"/>
-                            <constraint firstItem="3rA-t9-A4T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kK2-ab-nAc"/>
-                            <constraint firstItem="cTn-2i-YB0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vmf-ah-6OX"/>
-                            <constraint firstItem="5IB-3O-PY4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yKP-by-MyA"/>
+                            <constraint firstItem="5IB-3O-PY4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5Iw-vI-G2f"/>
+                            <constraint firstItem="cTn-2i-YB0" firstAttribute="trailing" secondItem="pHM-XB-8kN" secondAttribute="trailing" id="Cz1-bl-gmg"/>
+                            <constraint firstItem="cTn-2i-YB0" firstAttribute="top" secondItem="3rA-t9-A4T" secondAttribute="top" id="Elj-aq-vvI"/>
+                            <constraint firstItem="cTn-2i-YB0" firstAttribute="leading" secondItem="pHM-XB-8kN" secondAttribute="leading" id="FV0-3g-a97"/>
+                            <constraint firstItem="pHM-XB-8kN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GPW-QS-ZBJ"/>
+                            <constraint firstItem="3rA-t9-A4T" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="MdG-k0-rq2"/>
+                            <constraint firstItem="3rA-t9-A4T" firstAttribute="bottom" secondItem="5IB-3O-PY4" secondAttribute="top" id="SFW-at-gXN"/>
+                            <constraint firstItem="3rA-t9-A4T" firstAttribute="trailing" secondItem="5IB-3O-PY4" secondAttribute="trailing" id="Zt5-ns-a6d"/>
+                            <constraint firstItem="cTn-2i-YB0" firstAttribute="centerX" secondItem="3rA-t9-A4T" secondAttribute="centerX" id="fdO-EI-BtY"/>
+                            <constraint firstItem="3rA-t9-A4T" firstAttribute="leading" secondItem="5IB-3O-PY4" secondAttribute="leading" id="jZw-rj-H31"/>
+                            <constraint firstItem="3rA-t9-A4T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pll-Fh-43g"/>
+                            <constraint firstItem="pHM-XB-8kN" firstAttribute="bottom" secondItem="5IB-3O-PY4" secondAttribute="top" id="qm6-fI-b4m"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5IB-3O-PY4" secondAttribute="bottom" id="u1t-YK-SpZ"/>
                         </constraints>
                     </view>
                     <connections>
