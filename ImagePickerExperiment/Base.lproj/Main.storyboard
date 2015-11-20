@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImagePickerExperiment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="ImagePickerExperiment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -84,6 +84,7 @@
                             <constraint firstItem="5IB-3O-PY4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5Iw-vI-G2f"/>
                             <constraint firstItem="cTn-2i-YB0" firstAttribute="trailing" secondItem="pHM-XB-8kN" secondAttribute="trailing" constant="-1" id="Cz1-bl-gmg"/>
                             <constraint firstItem="cTn-2i-YB0" firstAttribute="top" secondItem="3rA-t9-A4T" secondAttribute="top" id="Elj-aq-vvI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5IB-3O-PY4" secondAttribute="bottom" id="F81-A0-Zet"/>
                             <constraint firstItem="cTn-2i-YB0" firstAttribute="leading" secondItem="pHM-XB-8kN" secondAttribute="leading" constant="-1" id="FV0-3g-a97"/>
                             <constraint firstItem="pHM-XB-8kN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GPW-QS-ZBJ"/>
                             <constraint firstItem="3rA-t9-A4T" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="MdG-k0-rq2"/>
@@ -96,7 +97,6 @@
                             <constraint firstItem="3rA-t9-A4T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pll-Fh-43g"/>
                             <constraint firstItem="pHM-XB-8kN" firstAttribute="bottom" secondItem="5IB-3O-PY4" secondAttribute="top" id="qm6-fI-b4m"/>
                             <constraint firstItem="u4E-kt-6nW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sea-7g-dbw"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5IB-3O-PY4" secondAttribute="bottom" id="u1t-YK-SpZ"/>
                         </constraints>
                     </view>
                     <connections>

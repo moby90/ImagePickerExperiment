@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -22,48 +22,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //Use this variable to set a default status and been able to come back to this status
     var firstScreen = true
     
-    //Dictionary for Text Field Attributes
-    let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.blackColor(),
-        NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : -6.5
-    ]
-    
     //Text Field Delegate in seperate .swift
     let textFieldDelegate = TextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Set Text Field Attributes and Alignment of Text Field
-        setupTextField(self.topTextField)
-        setupTextField(self.bottomTextField)
-        
-        //On Startscreen disable Text Fields and hiding them
-        self.topTextField.text = ""
-        self.topTextField.enabled = false
-        self.bottomTextField.text = ""
-        self.bottomTextField.enabled = false
+        //Prepare Text Fields
+        prepareTextField(topTextField, defaultText:"")
+        prepareTextField(bottomTextField, defaultText:"")
         
         //Disable the Share and Cancel Button, because there is no use of them in the beginning.
-        self.shareButton.enabled = false
-        self.cancelButton.enabled = false
-        
-        //Set Text Field Delegates
-        self.topTextField.delegate = textFieldDelegate
-        self.bottomTextField.delegate = textFieldDelegate
-
+        shareButton.enabled = false
+        cancelButton.enabled = false
     }
     
-    private func setupTextField(textField: UITextField){
+    func prepareTextField(textField: UITextField, defaultText: String) {
+        super.viewDidLoad()
         
-        //Use the dictionary initialized when starting the app
+        let memeTextAttributes = [
+            NSStrokeColorAttributeName : UIColor.blackColor(),
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 35)!,
+            NSStrokeWidthAttributeName : -2.0
+        ]
+        
+        //Set Delegate
+        textField.delegate = textFieldDelegate
+        
         textField.defaultTextAttributes = memeTextAttributes
+        textField.text = defaultText
+        textField.autocapitalizationType = .AllCharacters
+        textField.textAlignment = .Center
         
-        //Text Alignment shall be centered
-        textField.textAlignment = NSTextAlignment.Center
-        
+        //Disable Text Field
+        textField.enabled = false
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -77,13 +70,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
         //Subscription to Keyboard Notifications
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
 
     //Album Button Action:
@@ -95,7 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .PhotoLibrary
         
         imagePicker.delegate = self
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
         
     }
     
@@ -108,7 +101,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .Camera
         
         imagePicker.delegate = self
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
         
     }
     
@@ -117,22 +110,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //Enable Text Fields and show default text
         if firstScreen{
             firstScreen = false
-            self.topTextField.enabled = true
-            self.topTextField.text = "TOP"
+            topTextField.enabled = true
+            topTextField.text = "TOP"
             
-            self.bottomTextField.enabled = true
-            self.bottomTextField.text = "BOTTOM"
+            bottomTextField.enabled = true
+            bottomTextField.text = "BOTTOM"
             
         }
         
         //In order to get access to an image
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            self.imagePickerView.image = image
+            imagePickerView.image = image
             dismissViewControllerAnimated(true, completion: nil)
             
             //Enable Cancel Button and Share Button
-            self.cancelButton.enabled = true
-            self.shareButton.enabled = true
+            cancelButton.enabled = true
+            shareButton.enabled = true
         }
     }
     
@@ -145,7 +138,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //Only shift view, when editing bottom Text Field
         if bottomTextField.editing{
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -153,7 +146,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //Only shift view, when editing top Text Field
         if bottomTextField.editing{
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y  = 0
         }
     }
     
@@ -188,7 +181,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         
         //Present Activity View
-        self.presentViewController(activityViewController, animated: true, completion: nil)
+        presentViewController(activityViewController, animated: true, completion: nil)
         
         activityViewController.completionWithItemsHandler = {
             
@@ -216,41 +209,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cancelAction(sender: AnyObject) {
         
         //Pressing "Cancel" means default status now:
-        self.firstScreen = true
+        firstScreen = true
         
         //Disable TextFields
-        self.topTextField.enabled = false
-        self.bottomTextField.enabled = false
+        topTextField.enabled = false
+        bottomTextField.enabled = false
         //Hiding TextFields
-        self.topTextField.text = ""
-        self.bottomTextField.text = ""
+        topTextField.text = ""
+        bottomTextField.text = ""
         
         //Clear image
-        self.imagePickerView.image = nil
+        imagePickerView.image = nil
         
         //After disabling and hiding and clearing there is no use for the Cancel Button
         //Disable Cancel Button
-        self.cancelButton.enabled = false
+        cancelButton.enabled = false
         
     }
     
     func generateMemedImage() -> UIImage {
         
         //Hide toolbar and navbar
-        self.toolbar.hidden = true
-        self.navigationbar.hidden = true
+        toolbar.hidden = true
+        navigationbar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame,
+        view.drawViewHierarchyInRect(self.view.frame,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         //Show toolbar and navbar
-        self.toolbar.hidden = false
-        self.navigationbar.hidden = false
+        toolbar.hidden = false
+        navigationbar.hidden = false
         
         return memedImage
     }
