@@ -10,22 +10,19 @@ import UIKit
 
 class TextFieldDelegate: NSObject, UITextFieldDelegate{
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        return true
-        //Implement
-        
-    }
-    
     func textFieldDidBeginEditing(textField: UITextField) {
         //Implement clear default text
         textField.text = ""
     }
     
+    //Hide Keyboard after pressing "Return"
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    //If unintenionally left blank on textfield, there will be written "TEXT" instead.
+    //To intentionally blank a textfield, you have to use a blank space ( _ )
     func textFieldDidEndEditing(textField: UITextField) {
         
         if textField.text == "" {
