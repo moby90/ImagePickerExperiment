@@ -64,7 +64,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         //Cut off left and right side :-(
         //But this way it is easier to handle Text Fields.
-        imagePickerView.contentMode = .ScaleAspectFill
+        //imagePickerView.contentMode = .ScaleAspectFill
         
         //Enable Camera Button if there is camera available.
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
