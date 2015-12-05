@@ -224,7 +224,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         //After disabling and hiding and clearing there is no use for the Cancel Button
         //Disable Cancel Button
         cancelButton.enabled = false
-        
+        shareButton.enabled = false        
     }
     
     func generateMemedImage() -> UIImage {
