@@ -202,7 +202,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         //Bottom Text Field Text
         //Original Image
         //Memed Image
-        let meme = Meme(textTop: self.topTextField.text!, textBottom: self.bottomTextField.text!, image: self.imagePickerView.image!, memedImage: memedImage)
+        let meme = Meme(textTop: topTextField.text!, textBottom: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
+        
+        // Add it to the memes array in the Application Delegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     //Cancel Button Action:
