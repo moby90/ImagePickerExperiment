@@ -28,6 +28,22 @@ class MemeCollectionViewController: UICollectionViewController{
         flowLayout.minimumLineSpacing = space
         flowLayout.minimumInteritemSpacing = space
         flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        
+        for var i = 0; i < 10; ++i{
+            debugPurpose()
+        }
+    }
+    
+    private func debugPurpose(){
+        
+        let img = UIImage(named: "lechiffre")
+        let meme = Meme(textTop: "TopText", textBottom: "BottomText", image: img!, memedImage: img!)
+        
+        // Add it to the memes array in the Application Delegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        
     }
     
     override func viewWillAppear(animated: Bool) {

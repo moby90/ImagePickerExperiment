@@ -122,27 +122,40 @@
         <scene sceneID="iN6-qZ-fbi">
             <objects>
                 <tableViewController id="QSq-Ww-luy" customClass="MemeTableViewController" customModule="ImagePickerExperiment" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="F1j-dh-cht">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="F1j-dh-cht">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" rowHeight="50" id="Bvn-lY-aCk" customClass="MemeTableViewCell" customModule="ImagePickerExperiment" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" rowHeight="80" id="Bvn-lY-aCk" customClass="MemeTableViewCell" customModule="ImagePickerExperiment" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bvn-lY-aCk" id="9fe-K5-bVl">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3N-W4-Dbd">
-                                            <rect key="frame" x="8" y="14" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3N-W4-Dbd">
+                                            <rect key="frame" x="151" y="29" width="441" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yBr-tM-gD9">
+                                            <rect key="frame" x="0.0" y="3" width="135" height="71.5"/>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="v3N-W4-Dbd" secondAttribute="bottom" constant="21.5" id="8Rc-1u-sgF"/>
+                                        <constraint firstItem="v3N-W4-Dbd" firstAttribute="top" secondItem="9fe-K5-bVl" secondAttribute="topMargin" constant="21" id="B49-zH-esE"/>
+                                        <constraint firstItem="yBr-tM-gD9" firstAttribute="top" secondItem="9fe-K5-bVl" secondAttribute="topMargin" constant="-5" id="OSh-0E-Rmq"/>
+                                        <constraint firstItem="v3N-W4-Dbd" firstAttribute="centerY" secondItem="9fe-K5-bVl" secondAttribute="centerY" id="PRH-g8-wbe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yBr-tM-gD9" secondAttribute="bottom" constant="-3" id="amU-ig-BAO"/>
+                                        <constraint firstItem="yBr-tM-gD9" firstAttribute="leading" secondItem="9fe-K5-bVl" secondAttribute="leadingMargin" id="wFj-36-ori"/>
+                                        <constraint firstItem="v3N-W4-Dbd" firstAttribute="leading" secondItem="yBr-tM-gD9" secondAttribute="trailing" constant="16" id="yMm-pO-01C"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="memeImageView" destination="yBr-tM-gD9" id="QYX-2Q-AkY"/>
                                     <outlet property="memeLabel" destination="v3N-W4-Dbd" id="3RJ-ZE-GbD"/>
                                 </connections>
                             </tableViewCell>
@@ -159,9 +172,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableViewOutlet" destination="F1j-dh-cht" id="w1J-6n-z1A"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjF-ya-cxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

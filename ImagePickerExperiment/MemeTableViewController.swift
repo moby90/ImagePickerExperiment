@@ -10,8 +10,6 @@ import UIKit
 
 class MemeTableViewController: UITableViewController{
     
-    @IBOutlet var tableViewOutlet: UITableView!
-    
     var memes: [Meme] {
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
@@ -21,15 +19,11 @@ class MemeTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        tableViewOutlet.delegate = self
-        tableViewOutlet.dataSource = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableViewOutlet.reloadData()
+        tableView.reloadData()
         
         
     }
@@ -41,15 +35,15 @@ class MemeTableViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MemeTableViewCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("MemeTableViewCell", forIndexPath: indexPath) as! MemeTableViewCell
         let meme = memes[indexPath.item]
-        //cell.imageView!.image = meme.memedImage
-        cell.textLabel?.text = meme.textTop + "...." + meme.textBottom
+        cell.memeImageView?.image = meme.memedImage
+        cell.memeLabel.text = meme.textTop + "...." + meme.textBottom
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
     }
     
