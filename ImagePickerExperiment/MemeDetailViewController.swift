@@ -13,11 +13,7 @@ class MemeDetailViewController: UIViewController {
     // Image view that will contain the memed image
     @IBOutlet weak var imageView: UIImageView!
     
-    var memeIndex: Int!
     var meme: Meme!
-    
-    // MARK: -
-    // MARK: View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

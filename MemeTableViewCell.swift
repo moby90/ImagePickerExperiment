@@ -8,6 +8,9 @@
 
 import UIKit
 
+//The TableView Cell contains of:
+// - ImageView showing the memedImage
+// - A Label showing the Top and Bottom Text
 class MemeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var memeImageView: UIImageView!

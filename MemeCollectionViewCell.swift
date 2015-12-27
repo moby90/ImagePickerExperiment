@@ -10,6 +10,7 @@ import UIKit
 
 class MemeCollectionViewCell: UICollectionViewCell {
     
-   
+    //The collectionView Cell contains of:
+    // - An image
     @IBOutlet weak var memeImage: UIImageView!
 }
