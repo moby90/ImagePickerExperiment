@@ -81,15 +81,11 @@ class MemeCollectionViewController: UICollectionViewController{
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        // Get the detailViewController from storyboard
-        let object: AnyObject = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController")
-        let memeDetailVC = object as! MemeDetailViewController
-        
-        //Setup the View Controller with selected meme
+        let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         memeDetailVC.meme = memes[indexPath.item]
-        memeDetailVC.hidesBottomBarWhenPushed = true    //Turn off tab bar
         
-        //Present the view controller
+        //memeDetailVC.hidesBottomBarWhenPushed = true        //Turn off tab bar
+        
         navigationController!.pushViewController(memeDetailVC, animated: true)
         
     }

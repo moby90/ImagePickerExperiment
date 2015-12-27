@@ -49,10 +49,10 @@ class MemeTableViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let memeDetailVC = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         memeDetailVC.meme = memes[indexPath.item]
         
-        memeDetailVC.hidesBottomBarWhenPushed = true        //Turn off tab bar
+        //memeDetailVC.hidesBottomBarWhenPushed = true        //Turn off tab bar
         
         navigationController!.pushViewController(memeDetailVC, animated: true)
         

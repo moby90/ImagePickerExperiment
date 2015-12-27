@@ -24,11 +24,11 @@
             </objects>
             <point key="canvasLocation" x="-1568" y="185"/>
         </scene>
-        <!--Collection-->
+        <!--Navigation Controller-->
         <scene sceneID="ACa-ZY-Zo5">
             <objects>
                 <navigationController id="8bK-n7-JeV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" id="zTL-Lk-ue1"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection" id="zTL-Lk-ue1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jWQ-CW-StE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -101,11 +101,11 @@
             </objects>
             <point key="canvasLocation" x="210" y="-309"/>
         </scene>
-        <!--Table-->
+        <!--Navigation Controller-->
         <scene sceneID="Of3-wh-P9G">
             <objects>
                 <navigationController id="bxt-Qi-xMN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="OrC-K4-jIL"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="OrC-K4-jIL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s5E-yi-zd7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -122,36 +122,36 @@
         <scene sceneID="iN6-qZ-fbi">
             <objects>
                 <tableViewController id="QSq-Ww-luy" customClass="MemeTableViewController" customModule="ImagePickerExperiment" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="F1j-dh-cht">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="F1j-dh-cht">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" rowHeight="80" id="Bvn-lY-aCk" customClass="MemeTableViewCell" customModule="ImagePickerExperiment" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" rowHeight="150" id="Bvn-lY-aCk" customClass="MemeTableViewCell" customModule="ImagePickerExperiment" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bvn-lY-aCk" id="9fe-K5-bVl">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3N-W4-Dbd">
-                                            <rect key="frame" x="151" y="29" width="441" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3N-W4-Dbd">
+                                            <rect key="frame" x="151" y="64" width="449" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yBr-tM-gD9">
-                                            <rect key="frame" x="0.0" y="3" width="135" height="71.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yBr-tM-gD9">
+                                            <rect key="frame" x="8" y="0.0" width="135" height="149.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="135" id="WgU-Jh-Siv"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="149.5" id="dM0-vI-hc3"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="v3N-W4-Dbd" secondAttribute="bottom" constant="21.5" id="8Rc-1u-sgF"/>
-                                        <constraint firstItem="v3N-W4-Dbd" firstAttribute="top" secondItem="9fe-K5-bVl" secondAttribute="topMargin" constant="21" id="B49-zH-esE"/>
-                                        <constraint firstItem="yBr-tM-gD9" firstAttribute="top" secondItem="9fe-K5-bVl" secondAttribute="topMargin" constant="-5" id="OSh-0E-Rmq"/>
-                                        <constraint firstItem="v3N-W4-Dbd" firstAttribute="centerY" secondItem="9fe-K5-bVl" secondAttribute="centerY" id="PRH-g8-wbe"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="yBr-tM-gD9" secondAttribute="bottom" constant="-3" id="amU-ig-BAO"/>
-                                        <constraint firstItem="yBr-tM-gD9" firstAttribute="leading" secondItem="9fe-K5-bVl" secondAttribute="leadingMargin" id="wFj-36-ori"/>
-                                        <constraint firstItem="v3N-W4-Dbd" firstAttribute="leading" secondItem="yBr-tM-gD9" secondAttribute="trailing" constant="16" id="yMm-pO-01C"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yBr-tM-gD9" secondAttribute="bottom" constant="-8" id="K5M-VE-5fH"/>
+                                        <constraint firstItem="yBr-tM-gD9" firstAttribute="top" secondItem="9fe-K5-bVl" secondAttribute="topMargin" constant="-8" id="Rp1-d8-B4A"/>
+                                        <constraint firstItem="yBr-tM-gD9" firstAttribute="leading" secondItem="9fe-K5-bVl" secondAttribute="leadingMargin" id="gUU-gU-e8g"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -180,7 +180,7 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="deX-1o-0sk">
             <objects>
-                <viewController id="OR0-ea-FCQ" customClass="MemeDetailViewController" customModule="ImagePickerExperiment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" id="OR0-ea-FCQ" customClass="MemeDetailViewController" customModule="ImagePickerExperiment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x4x-U4-oa3"/>
                         <viewControllerLayoutGuide type="bottom" id="JXt-2x-BrB"/>
@@ -189,18 +189,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3h-LR-Vul">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J3h-LR-Vul">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="J3h-LR-Vul" firstAttribute="width" secondItem="UNv-rA-pbm" secondAttribute="width" id="5us-JZ-FcR"/>
-                            <constraint firstItem="J3h-LR-Vul" firstAttribute="centerX" secondItem="UNv-rA-pbm" secondAttribute="centerX" id="cog-uB-rdf"/>
-                            <constraint firstItem="J3h-LR-Vul" firstAttribute="centerY" secondItem="UNv-rA-pbm" secondAttribute="centerY" id="db0-Da-fTj"/>
-                            <constraint firstItem="J3h-LR-Vul" firstAttribute="height" secondItem="UNv-rA-pbm" secondAttribute="height" id="tWl-TZ-9Hs"/>
+                            <constraint firstItem="J3h-LR-Vul" firstAttribute="leading" secondItem="UNv-rA-pbm" secondAttribute="leadingMargin" constant="-20" id="0Cg-ah-4h4"/>
+                            <constraint firstItem="JXt-2x-BrB" firstAttribute="top" secondItem="J3h-LR-Vul" secondAttribute="bottom" id="eZ4-Bb-NpS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J3h-LR-Vul" secondAttribute="trailing" constant="-20" id="q8J-0A-B0e"/>
+                            <constraint firstItem="J3h-LR-Vul" firstAttribute="height" secondItem="UNv-rA-pbm" secondAttribute="height" id="vLY-1h-cby"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="J3h-LR-Vul" id="AZz-vC-CMr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVd-JG-d8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -309,4 +312,8 @@
             <point key="canvasLocation" x="978" y="-309"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
 </document>
