@@ -14,6 +14,7 @@ class MemeDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var meme: Meme!
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,21 @@ class MemeDetailViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.imageView.image = meme.memedImage
+        imageView.image = meme.memedImage
     }
     
+    @IBAction func deleteMeme(){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //TODO get the index
+        appDelegate.memes.removeAtIndex(index)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func editMeme(){
+        let memeEditorController = storyboard!.instantiateViewControllerWithIdentifier("MemeMeEditor") as! MemeEditorViewController
+        //TODO set the meme
+        
+        presentViewController(memeEditorController, animated: true, completion: nil)
+        memeEditorController.editMeme(meme)
+    }
 }

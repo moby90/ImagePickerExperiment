@@ -34,6 +34,7 @@ class MemeTableViewController: UITableViewController{
     @IBAction func addMeme(sender: AnyObject) {
         let memeEditorController = storyboard!.instantiateViewControllerWithIdentifier("MemeMeEditor") as! MemeEditorViewController
         
+        //self.tabBarController?.tabBar.hidden = true
         self.presentViewController(memeEditorController, animated: true, completion: nil)
     }
     
@@ -61,8 +62,27 @@ class MemeTableViewController: UITableViewController{
         let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
         memeDetailVC.meme = memes[indexPath.item]
+        memeDetailVC.index = indexPath.item
         
         navigationController!.pushViewController(memeDetailVC, animated: true)
         
+    }
+    
+    //Additional functions, when the User slides the cell to the left:
+    // - Delete function
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            deleteMeme(indexPath)
+        }
+    }
+    
+    //Deletes a meme from the TableView and Shared Model
+    private func deleteMeme(indexPath: NSIndexPath){
+        //remove the meme from the shared Model
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.memes.removeAtIndex(indexPath.item)
+        
+        //remove the deleted meme from the tableView
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
     }
 }

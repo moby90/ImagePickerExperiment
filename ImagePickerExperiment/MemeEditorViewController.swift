@@ -22,6 +22,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     //Use this variable to set a default status and been able to come back to this status
     var firstScreen = true
     
+    //Use this variable to chef if creating a new meme or editing an exisiting meme
+    var editingMeme = false
+    
     //Text Field Delegate in seperate .swift
     let textFieldDelegate = TextFieldDelegate()
     
@@ -32,13 +35,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         prepareTextField(topTextField, defaultText:"")
         prepareTextField(bottomTextField, defaultText:"")
         
-        //Disable the Share and Cancel Button, because there is no use of them in the beginning.
+        //Disable the Share Button because there is no use of it in the beginning.
         shareButton.enabled = false
-        cancelButton.enabled = false
     }
     
     func prepareTextField(textField: UITextField, defaultText: String) {
-        super.viewDidLoad()
         
         let memeTextAttributes = [
             NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -123,8 +124,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             imagePickerView.image = image
             dismissViewControllerAnimated(true, completion: nil)
             
-            //Enable Cancel Button and Share Button
-            cancelButton.enabled = true
+            //Enable Share Button
             shareButton.enabled = true
         }
     }
@@ -227,9 +227,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         imagePickerView.image = nil
         
         //After disabling and hiding and clearing there is no use for the Cancel Button
-        //Disable Cancel Button
-        cancelButton.enabled = false
-        shareButton.enabled = false        
+        shareButton.enabled = false
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
@@ -251,6 +251,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         navigationbar.hidden = false
         
         return memedImage
+    }
+    
+    func editMeme(meme: Meme){
+        editingMeme = true
+        
+        imagePickerView.image = meme.image
+        topTextField.text = meme.textTop
+        bottomTextField.text = meme.textBottom
     }
 }
 

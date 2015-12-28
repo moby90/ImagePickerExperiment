@@ -34,18 +34,18 @@ class MemeCollectionViewController: UICollectionViewController{
         
         //----Uncomment to fill the memesArray in AppDelegate----
         //--------------For Debug purpose only!!!----------------
-/*
+
         for var i = 0; i < 10; ++i{
             debugPurpose()
         }
-*/
+
     }
 
     
     //----Uncomment to fill the memesArray in AppDelegate----
     //--------------For Debug purpose only!!!----------------
     
-/*
+
     private func debugPurpose(){
         
         let img = UIImage(named: "lechiffre")
@@ -57,7 +57,7 @@ class MemeCollectionViewController: UICollectionViewController{
         appDelegate.memes.append(meme)
         
     }
-*/
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -97,7 +97,9 @@ class MemeCollectionViewController: UICollectionViewController{
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        
         memeDetailVC.meme = memes[indexPath.item]
+        memeDetailVC.index = indexPath.item
         
         navigationController!.pushViewController(memeDetailVC, animated: true)
         
