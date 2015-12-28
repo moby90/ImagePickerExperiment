@@ -28,7 +28,7 @@ class MemeDetailViewController: UIViewController {
     
     @IBAction func deleteMeme(){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        //TODO get the index
+        
         appDelegate.memes.removeAtIndex(index)
         self.navigationController?.popViewControllerAnimated(true)
     }
