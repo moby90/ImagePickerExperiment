@@ -21,6 +21,7 @@ class MemeDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
         super.viewWillAppear(animated)
         imageView.image = meme.memedImage
     }
@@ -34,9 +35,12 @@ class MemeDetailViewController: UIViewController {
     
     @IBAction func editMeme(){
         let memeEditorController = storyboard!.instantiateViewControllerWithIdentifier("MemeMeEditor") as! MemeEditorViewController
-        //TODO set the meme
         
         presentViewController(memeEditorController, animated: true, completion: nil)
-        memeEditorController.editMeme(meme)
+        
+        memeEditorController.editMeme(meme, index: index)
+        
+        //When returning to DetailView, the User will be directed to Table or CollectionView
+        navigationController!.popViewControllerAnimated(true)
     }
 }

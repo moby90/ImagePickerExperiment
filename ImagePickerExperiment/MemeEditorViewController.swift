@@ -24,6 +24,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     //Use this variable to chef if creating a new meme or editing an exisiting meme
     var editingMeme = false
+    //Use to replace Meme when editing
+    var index: Int = 0
     
     //Text Field Delegate in seperate .swift
     let textFieldDelegate = TextFieldDelegate()
@@ -72,6 +74,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         //Subscription to Keyboard Notifications
         subscribeToKeyboardNotifications()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        editingMeme = false
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -206,8 +212,19 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         // Add it to the memes array in the Application Delegate
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        //let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
+        
+        if !editingMeme{
+            //let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(meme)
+        }else{
+            appDelegate.memes.insert(meme, atIndex: index)
+            index = index + 1
+            appDelegate.memes.removeAtIndex(index)
+            
+            
+            
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     //Cancel Button Action:
@@ -253,12 +270,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         return memedImage
     }
     
-    func editMeme(meme: Meme){
+    func editMeme(meme: Meme, index: Int){
         editingMeme = true
+        self.index = index
         
         imagePickerView.image = meme.image
         topTextField.text = meme.textTop
         bottomTextField.text = meme.textBottom
+        
+        shareButton.enabled = true
+        topTextField.enabled = true
+        bottomTextField.enabled = true
     }
 }
 
